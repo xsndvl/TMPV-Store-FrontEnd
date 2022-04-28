@@ -1,3 +1,49 @@
 .App {
   text-align: center;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  /* background-color: #F7F7F7; */
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin: 1.5em;
+  text-decoration: none;
+}
+
+.NavBar {
+  background-color: #F7F7F7;
+  width: 100%;
+}
+
+.tmpv {
+  display: inline-block;
+}
+
+.image {
+  height: 25em;
+}
+
+.items {
+  display: inline-block;
+  margin: 2em 2em
+}
+
+.home-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap
 }
