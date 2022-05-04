@@ -15,11 +15,10 @@ const ProductView = () => {
     }, [])
     
 
-    // console.log("ehy")
-
     const renderProducts = productData.map((product, i) => {
         return(
             <div key={i}>
+                <img src={require(`../assets/${product.image}`)} alt={product.image}/>
                 <p>This is the name: {product.product_name}</p>
             </div>
         )
