@@ -8,12 +8,12 @@
   height: 100%;
   width: 100%;
   overflow: auto;
+  font-family: Bookman;
 }
 
 ul{
   padding: 0;
   margin: 0;
-  /* background-color: #F7F7F7; */
   display: inline-block;
 }
 
@@ -33,17 +33,30 @@ li {
   display: inline-block;
 }
 
+.tmpv_header {
+  text-decoration: none;
+}
+
+h3 {
+  text-decoration: none;
+}
+
 .image {
   height: 25em;
 }
 
 .items {
-  display: inline-block;
+  /* display: block; */
   margin: 2em 2em
 }
 
-.home-items {
+.home_items {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  flex-direction:  column;
+}
+
+.item_type {
+  font-family: Bookman;
 }
