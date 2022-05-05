@@ -24,6 +24,10 @@ li {
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .NavBar {
   background-color: #F7F7F7;
   width: 100%;
@@ -54,9 +58,48 @@ img {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  flex-direction:  column;
+  flex-direction:  row;
 }
 
 .item_type {
   font-family: Bookman;
+}
+
+.individual {
+  padding: 0em 1em;
+}
+
+.HomeItemContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.SecondaryItemContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: 2em 2em;
+  height: 25em;
+  width: 18.75em;
+  text-align: center;
+  background-color: #E8E8E9;
+}
+
+.SecondaryItemContainer:hover {
+  background-color: #D0D0D1
+  ;
+}
+
+.HomeItemText {
+  font-family: Bookman;
+  font-size: 3em;
+  color: black;
+  margin: 0;
+}
+
+.HomeItemText:hover {
+  color: #404040;
 }

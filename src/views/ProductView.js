@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Link, Routes, Route } from "react-router-dom"
 
 const ProductView = () => {
     const [ productData, setProductData ] = useState([])
@@ -13,13 +14,28 @@ const ProductView = () => {
         }
         fetchData()
     }, [])
+
     
 
+    // const justHoodies = productData.filter(product => product.product_type === "Hoodie")
+    // console.log(justHoodies)
+
     const renderProducts = productData.map((product, i) => {
+        let image_one = require(`../assets/${product.image_one}`)
+        let image_two = require(`../assets/${product.image_two}`)
+
+        const handleClick = () => {
+            window.alert("clicked")
+            console.log("clicked")
+        }
+        
         return(
-            <div key={i}>
-                <img src={require(`../assets/${product.image}`)} alt={product.image}/>
-                <p>This is the name: {product.product_name}</p>
+            <div className="individual" key={i} onClick={handleClick} >
+                <img src={image_one} onMouseEnter={e => e.currentTarget.src=image_two} onMouseLeave={e => e.currentTarget.src=image_one} alt={product.image_one}/>
+
+                <h2>{product.product_name}</h2>
+
+                <p>${product.price}</p>
             </div>
         )
     }) 
@@ -27,7 +43,9 @@ const ProductView = () => {
     return(
         <div>
             <h1>Product View</h1>
-            {renderProducts}
+            <div className="home_items">
+                {renderProducts}
+            </div>
         </div>
     )
 }

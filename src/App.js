@@ -1,12 +1,11 @@
 import './App.css';
 import NavBar from "./components/NavBar"
-// import Items from './components/Items';
-import Home from "./components/Home"
+import HomeView from "./views/HomeView"
 import ProductView from './views/ProductView';
+import Footer from "./components/Footer"
 
 import { 
   BrowserRouter as Router, 
-  Link,
   Routes,
   Route
 } from "react-router-dom"
@@ -18,13 +17,12 @@ function App() {
       <Router>
         <NavBar/>
 
-        <Link to="/products"><button>Product View</button></Link>
-
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<HomeView/>}/>
           <Route path="/products" element={<ProductView/>}/>
         </Routes>
 
+        <Footer/>
       </Router>
     </div>
   );
