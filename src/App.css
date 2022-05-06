@@ -41,6 +41,10 @@ a {
   text-decoration: none;
 }
 
+h2, p{
+  color: black;
+}
+
 h3 {
   text-decoration: none;
 }
@@ -103,3 +107,4 @@ img {
 .HomeItemText:hover {
   color: #404040;
 }
+

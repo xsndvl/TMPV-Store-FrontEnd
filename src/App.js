@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar"
 import HomeView from "./views/HomeView"
 import ProductView from './views/ProductView';
 import Footer from "./components/Footer"
+import SpecificProductView from './views/SpecificProductView';
 
 import { 
   BrowserRouter as Router, 
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeView/>}/>
           <Route path="/products" element={<ProductView/>}/>
+          <Route path="/products/:type" element={<SpecificProductView/>}/>
         </Routes>
 
         <Footer/>
