@@ -5,6 +5,7 @@ import ProductView from './views/ProductView';
 import Footer from "./components/Footer"
 import SpecificProductView from './views/SpecificProductView';
 import DetailedProductView from './views/DetailedProductView';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 import { 
   BrowserRouter as Router, 
