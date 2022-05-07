@@ -53,6 +53,7 @@ a:active {
 .NavBar {
   background-color: #F7F7F7;
   width: 100%;
+  position: relative;
 }
 
 .tmpv {
@@ -112,6 +113,8 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .SecondaryItemContainer {
@@ -119,9 +122,9 @@ img {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  margin: 2em 2em;
-  height: 25em;
-  width: 18.75em;
+  margin: 1em 1em;
+  height: 28em;
+  width: 28em;
   text-align: center;
   background-color: #E8E8E9;
 }
@@ -144,6 +147,8 @@ img {
 .backButton {
   position: absolute;
   padding-left: 4em;
+  top: 50%;
+  transform: translateY(-50%)
 }
 
 .footer {
@@ -159,5 +164,7 @@ img {
   margin: 1em;
 }
 
-
+.description {
+  font-size: 1.25em;
+}
 
