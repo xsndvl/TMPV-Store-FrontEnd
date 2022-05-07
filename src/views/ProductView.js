@@ -42,7 +42,8 @@ const ProductView = () => {
                 <div className="individual" onClick={handleClick} >
                     <img src={image_one} onMouseEnter={e => e.currentTarget.src=image_two} onMouseLeave={e => e.currentTarget.src=image_one} alt={product.image_one}/>
 
-                    <h2>{product.product_name}</h2>
+                    {/* TEMPORARY FIX BECAUSE TAN SHIRT DOES NOT EXIST, SHOULD BE <h2>{product.product_name}</h2> */}
+                    <h2>{product.product_name === "Tan Shirt Original Design" ? "Grey Shirt Original Design" : product.product_name}</h2>
 
                     <p>${product.price}</p>
                 </div>
