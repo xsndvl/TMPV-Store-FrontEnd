@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useLocation } from "react-router-dom"
 
 const SpecificProductView = () => {
+    let location = useLocation()
     const { type } = useParams()
     const [ productData, setProductData ] = useState([])
 
     useEffect(() => {
-        document.title = `TMPV ${capitalize(type)}`
+        location.pathname != "/" ? document.title = `TMPV ${capitalize(type)}` :
+        document.title = "TMPV Store"
         const fetchData = async() => {
             const API_URL = `http://localhost:3003/products/${type}`
             const response = await fetch(API_URL)
