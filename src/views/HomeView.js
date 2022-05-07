@@ -4,7 +4,6 @@ import HomeItems from "../components/HomeItems"
 const HomeView = () => {
     return(
         <div>
-            <button><Link to="/products">All Products</Link></button>
             <div className="HomeItemContainer">
                 <Link to={`/products/hoodies`}><HomeItems type={"Hoodies"}/></Link>
                 <Link to={`/products/shirts`}><HomeItems type={"Shirts"}/></Link>

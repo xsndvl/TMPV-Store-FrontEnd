@@ -1,24 +1,27 @@
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useParams, Link } from "react-router-dom"
 
-const ProductView = () => {
-    
+const SpecificProductView = () => {
+    const { type } = useParams()
     const [ productData, setProductData ] = useState([])
 
-
     useEffect(() => {
-        document.title = "TMPV Products"
-        
-        const fetchData = async () => {
-            const API_URL = `http://localhost:3003/products`
+        document.title = `TMPV ${capitalize(type)}`
+        const fetchData = async() => {
+            const API_URL = `http://localhost:3003/products/${type}`
             const response = await fetch(API_URL)
             const resData = await response.json()
             setProductData(resData)
         }
+        
         fetchData()
-    }, [])
+    }, [type])
+    
+    const capitalize = (string) => {
+        return(string.charAt(0).toUpperCase() + string.slice(1))
+    }
 
-    const renderProducts = productData.map((product, i) => {
+    const specificProducts = productData.map((product, i) => {
         let image_one = require(`../assets/${product.image_one}`)
         let image_two = require(`../assets/${product.image_two}`)
 
@@ -42,23 +45,22 @@ const ProductView = () => {
                 <div className="individual" onClick={handleClick} >
                     <img src={image_one} onMouseEnter={e => e.currentTarget.src=image_two} onMouseLeave={e => e.currentTarget.src=image_one} alt={product.image_one}/>
 
-                    {/* TEMPORARY FIX BECAUSE TAN SHIRT DOES NOT EXIST, SHOULD BE <h2>{product.product_name}</h2> */}
-                    <h2>{product.product_name === "Tan Shirt Original Design" ? "Grey Shirt Original Design" : product.product_name}</h2>
+                    <h2>{product.product_name}</h2>
 
                     <p>${product.price}</p>
                 </div>
             </Link>
         )
     }) 
-    
+
     return(
         <div>
-            <h1>Product View</h1>
+            <h1>{capitalize(type)} Page</h1>
             <div className="home_items">
-                {renderProducts}
+                {specificProducts} 
             </div>
         </div>
     )
 }
 
-export default ProductView
+export default SpecificProductView
